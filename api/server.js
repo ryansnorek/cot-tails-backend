@@ -14,9 +14,9 @@ server.use(cors());
 server.use("/api/cot", cotRouter);
 
 
-server.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client", "index.html"));
-});
+// server.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client", "index.html"));
+// });
 
 server.use((err, req, res, next) => {
   res.status(err.status || 500).json({
