@@ -1,0 +1,16 @@
+// add new year
+insert into cot_report_history
+select * from new_table_year;
+
+// add metrics 
+insert into cot_history_metrics
+select 
+market_and_exchange_names,
+cot_year,
+avg(open_interest_all),
+PERCENTILE_CONT(0.5) within group(order by open_interest_all) as median,
+max(open_interest_all),
+min(open_interest_all)
+from cot_report_history as crh
+where cot_year = 2021
+group by cot_year, market_and_exchange_names;
