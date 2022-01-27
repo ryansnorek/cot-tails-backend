@@ -13,7 +13,6 @@ server.use(cors());
 
 server.use("/api/cot", cotRouter);
 
-
 // server.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client", "index.html"));
 // });
