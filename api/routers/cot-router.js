@@ -18,9 +18,9 @@ router.get("/history/metrics/:year", (req, res, next) => {
 });
 
 router.get("/report", async (req, res, next) => {
-  fetchReport()
+  Cot.fetchReport()
     .then((report) => {
-      res.json(report.data)
+      res.json(report.data);
     })
     .catch(next);
 });
